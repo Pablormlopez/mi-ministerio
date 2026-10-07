@@ -194,8 +194,8 @@
   "message_193": "Capítulos por día",
   "message_194": "Hora preferida",
   "message_195": "Ajustar plan",
-  "message_196": "JW Library · acceso e información oficial",
-  "message_197": "Este enlace abre la página oficial. La apertura de la app depende del dispositivo.",
+  "message_196": "Abrir en JW Library",
+  "message_197": "Abre el capítulo de tu plan. Si JW Library no está instalada o el navegador no permite abrirla, usa la Biblioteca en Línea.",
   "message_198": "Lecturas completadas",
   "message_199": "–",
   "message_200": "Eliminar lectura",
@@ -274,5 +274,6 @@
   "install_ios": "iPhone o iPad: abre el sitio en Safari, pulsa Compartir y selecciona «Añadir a pantalla de inicio».",
   "install_limit": "Si todavía no aparece la opción, puedes seguir usando la versión web. Para trabajar sin conexión, abre la app con internet al menos una vez.",
   "install_close": "Entendido",
-  "download_apk": "Descargar APK · Android"
+  "download_apk": "Descargar APK · Android",
+  "bible_online": "Leer en la Biblioteca en Línea"
 }

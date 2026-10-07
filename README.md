@@ -43,7 +43,7 @@ conflictos y funcionamiento sin conexión en teléfonos reales.
 
 Es una beta web, no un APK. No incluye biometría, notificaciones nativas en segundo
 plano ni fusión automática multidispositivo. La lectura usa referencias, no copia
-texto bíblico. JW Library enlaza a la página oficial. Los horarios usan la zona
+texto bíblico. La lectura ofrece un enlace a JW Library y una alternativa al capítulo en la Biblioteca en Línea. Los horarios usan la zona
 del navegador. No se puede recuperar la contraseña. El modo demo no guarda datos.
 Las dependencias y los componentes derivados conservan sus propias licencias.
 
