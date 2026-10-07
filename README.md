@@ -54,3 +54,19 @@ al subir cambios a `main` o abrir una propuesta. Se activará cuando estos archi
 estén en un repositorio GitHub con Actions habilitado. No publica automáticamente
 el sitio ni necesita secretos de producción. Incluye una plantilla de errores e
 instrucciones de contribución y seguridad.
+
+## Android y Google Sites
+
+[Usar la aplicación](https://mi-ministerio-pablo.pablormlopez.chatgpt.site) ·
+[Descargar APK beta firmado](https://mi-ministerio-pablo.pablormlopez.chatgpt.site/downloads/mi-ministerio-0.3.1-beta.apk).
+
+`android/` contiene el proyecto TWA generado con Bubblewrap. El APK abre el sitio
+actual; no añade modo offline completo. Consulta `android/README.md` para compilar.
+La verificación Android en GitHub genera un APK sin firmar; la clave de distribución
+se conserva de forma privada. La instalación física y la sesión en Android están
+pendientes de validación manual.
+
+`google-sites/mi-ministerio.html` es HTML/CSS legible y comentado para insertar
+la app en Google Sites. Es una integración mediante iframe, no una conversión
+del backend en HTML. Para iniciar sesión y guardar, abre la aplicación fuera
+del marco. El editor de Google Sites debe probarse en la cuenta del propietario.

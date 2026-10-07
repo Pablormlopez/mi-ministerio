@@ -273,5 +273,6 @@
   "install_android": "Android: abre el menú del navegador y busca «Instalar aplicación» o «Añadir a pantalla de inicio».",
   "install_ios": "iPhone o iPad: abre el sitio en Safari, pulsa Compartir y selecciona «Añadir a pantalla de inicio».",
   "install_limit": "Si todavía no aparece la opción, puedes seguir usando la versión web. Para trabajar sin conexión, abre la app con internet al menos una vez.",
-  "install_close": "Entendido"
+  "install_close": "Entendido",
+  "download_apk": "Descargar APK · Android"
 }
