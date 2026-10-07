@@ -30,6 +30,7 @@ jobs:
           (yes || true) | "$sdk_dir/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$sdk_dir" --licenses > /dev/null
           "$sdk_dir/cmdline-tools/latest/bin/sdkmanager" --sdk_root="$sdk_dir" 'platforms;android-36' 'build-tools;35.0.0'
           echo "ANDROID_HOME=$sdk_dir" >> "$GITHUB_ENV"
+          echo "ANDROID_SDK_ROOT=$sdk_dir" >> "$GITHUB_ENV"
       - name: Compilar APK sin firma de distribución
         working-directory: android
         run: bash gradlew assembleRelease --no-daemon
