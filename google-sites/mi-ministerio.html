@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi Ministerio</title>
+  <!--
+    INSTRUCCIONES PARA GOOGLE SITES
+    1. Abre el editor de tu sitio, preferiblemente en una computadora.
+    2. Selecciona Insertar > Insertar (Incorporar) > Insertar código.
+    3. Pega TODO este archivo, pulsa Siguiente y luego Insertar.
+    4. Amplía la altura del bloque para ver bien la aplicación y publica.
+
+    Este HTML integra la aplicación alojada en su dirección original.
+    No contiene una copia independiente de la aplicación ni un servidor.
+    El código completo está en https://github.com/Pablormlopez/mi-ministerio
+    Para editar funciones de la app, modifica ese proyecto.
+  -->
+  <style>
+    /* Colores y medidas editables de la integración. */
+    :root {
+      --color-principal: #173d51;
+      --color-fondo: #f5f7f8;
+      --color-texto: #172c38;
+      --color-borde: #d6e0e5;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--color-texto);
+      background: var(--color-fondo);
+    }
+
+    .contenedor { max-width: 1200px; margin: 0 auto; padding: 16px; }
+    .cabecera { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+    h1 { margin: 0; font-size: 1.5rem; }
+    .acciones { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+
+    .boton {
+      display: inline-flex;
+      align-items: center;
+      min-height: 48px;
+      padding: 10px 16px;
+      border: 1px solid var(--color-principal);
+      border-radius: 10px;
+      background: var(--color-principal);
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .boton.secundario { background: white; color: var(--color-principal); }
+    a:focus-visible { outline: 3px solid #b87516; outline-offset: 4px; }
+    .nota { margin: 12px 0 18px; }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 850px;
+      border: 1px solid var(--color-borde);
+      border-radius: 14px;
+      background: white;
+    }
+
+    footer { margin-top: 16px; font-size: 0.875rem; }
+    footer a { color: var(--color-principal); }
+    @media (max-width: 600px) {
+      .contenedor { padding: 10px; }
+      .boton { width: 100%; justify-content: center; }
+      iframe { height: 800px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="contenedor">
+    <header class="cabecera">
+      <h1>Mi Ministerio</h1>
+      <span>Beta para revisión</span>
+    </header>
+
+    <!-- Los enlaces se abren fuera del marco de Google Sites. -->
+    <nav class="acciones" aria-label="Abrir o descargar Mi Ministerio">
+      <a class="boton"
+         href="https://mi-ministerio-pablo.pablormlopez.chatgpt.site"
+         target="_blank" rel="noopener noreferrer">
+        Abrir aplicación
+      </a>
+      <a class="boton secundario"
+         href="https://mi-ministerio-pablo.pablormlopez.chatgpt.site/downloads/mi-ministerio-0.3.1-beta.apk"
+         target="_blank" rel="noopener noreferrer">
+        Descargar APK para Android
+      </a>
+    </nav>
+
+    <p class="nota">
+      Puedes explorar la beta con «Probar sin registrarme»; los cambios de ese
+      modo se borran al recargar. Para iniciar sesión y guardar tus datos,
+      pulsa «Abrir aplicación». Si la vista de abajo no carga, usa ese mismo botón.
+    </p>
+
+    <!--
+      La app permanece alojada en su servidor. Un iframe no traslada sus
+      datos a Google Sites. La sesión y el almacenamiento pueden estar
+      restringidos por el navegador dentro de un marco de otro sitio.
+      No añadas una sandbox restrictiva: impediría funciones de la app.
+    -->
+    <iframe
+      title="Mi Ministerio: actividad, personas, agenda y perfil"
+      src="https://mi-ministerio-pablo.pablormlopez.chatgpt.site"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="clipboard-write">
+    </iframe>
+
+    <footer>
+      Herramienta independiente, no oficial. Código abierto bajo licencia MIT.
+      <a href="https://github.com/Pablormlopez/mi-ministerio"
+         target="_blank" rel="noopener noreferrer">Ver código y aportar mejoras</a>.
+    </footer>
+  </main>
+</body>
+</html>

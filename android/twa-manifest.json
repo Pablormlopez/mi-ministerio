@@ -1,0 +1,41 @@
+{
+  "packageId": "com.pablormlopez.miministerio",
+  "host": "mi-ministerio-pablo.pablormlopez.chatgpt.site",
+  "name": "Mi Ministerio",
+  "launcherName": "Mi Ministerio",
+  "display": "standalone",
+  "themeColor": "#173D51",
+  "themeColorDark": "#000000",
+  "navigationColor": "#173D51",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
+  "backgroundColor": "#F5F7F8",
+  "enableNotifications": false,
+  "startUrl": "/",
+  "iconUrl": "https://mi-ministerio-pablo.pablormlopez.chatgpt.site/icon-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "../private/release.keystore",
+    "alias": "ministerio"
+  },
+  "appVersionName": "0.3.1-beta",
+  "appVersionCode": 1,
+  "shortcuts": [],
+  "generatorApp": "unknown",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "minSdkVersion": 23,
+  "orientation": "default",
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "displayOverride": [],
+  "appVersion": "0.3.1-beta"
+}
