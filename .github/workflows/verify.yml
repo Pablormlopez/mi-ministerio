@@ -1,0 +1,36 @@
+name: Verificar beta
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Instalar dependencias
+        run: npm install --no-audit --no-fund
+      - name: Probar reglas y seguridad
+        run: npm test
+      - name: Compilar aplicación
+        run: npm run build
+      - name: Guardar compilación para revisión
+        uses: actions/upload-artifact@v4
+        with:
+          name: mi-ministerio-beta-${{ github.sha }}
+          path: dist/
+          retention-days: 14
+          if-no-files-found: error

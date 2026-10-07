@@ -1,0 +1,27 @@
+name: Reportar un problema
+description: Ayuda a mejorar Mi Ministerio sin compartir datos personales.
+title: '[Error] '
+body:
+  - type: textarea
+    id: steps
+    attributes:
+      label: ¿Cómo se reproduce?
+      description: Explica los pasos usando datos ficticios. No incluyas nombres, ubicaciones ni notas reales.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: ¿Qué esperabas que ocurriera?
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Teléfono, sistema y navegador
+  - type: textarea
+    id: actual
+    attributes:
+      label: ¿Qué ocurrió?
+    validations:
+      required: true
