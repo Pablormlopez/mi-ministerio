@@ -70,3 +70,17 @@ pendientes de validación manual.
 la app en Google Sites. Es una integración mediante iframe, no una conversión
 del backend en HTML. Para iniciar sesión y guardar, abre la aplicación fuera
 del marco. El editor de Google Sites debe probarse en la cuenta del propietario.
+
+## Acceso en este dispositivo
+
+Tras desbloquear una vez, la opción «Recordar este dispositivo y entrar directamente»
+está activada por defecto. El navegador guarda una CryptoKey no exportable en
+IndexedDB, asociada a la cuenta y a la sal de cifrado; no guarda la contraseña.
+Esto permite a quien use ese navegador abrir los datos sin escribir la contraseña.
+La clave no se envía al servidor ni se incluye en copias o exportaciones.
+
+En **Perfil → Privacidad**, «Pedir contraseña cada vez que abra la app» elimina
+la clave guardada y activa el bloqueo por cinco minutos sin interacción.
+«Bloquear ahora» elimina el acceso recordado hasta el siguiente desbloqueo.
+Un dispositivo nuevo, borrar los datos del navegador o una clave incompatible
+requieren otra vez la contraseña. El modo demo sigue siendo temporal.

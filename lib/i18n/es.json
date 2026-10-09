@@ -221,7 +221,7 @@
   "message_220": "Sin coincidencias.",
   "message_221": "Tus datos, bajo tu control",
   "message_222": "Los registros se cifran con tu contraseña antes de guardarse en este dispositivo y en la copia en línea. La contraseña no se almacena.",
-  "message_223": "La app se bloquea tras cinco minutos sin interacción. El cronómetro conserva el tiempo. Esta versión usa contraseña; no incluye desbloqueo biométrico.",
+  "message_223": "El acceso directo se configura por dispositivo. Al activar la solicitud de contraseña, se elimina la clave de acceso guardada en este navegador.",
   "message_224": "Bloquear ahora",
   "message_225": "Actualizar copia",
   "message_226": "Copias y exportaciones",
@@ -275,5 +275,9 @@
   "install_limit": "Si todavía no aparece la opción, puedes seguir usando la versión web. Para trabajar sin conexión, abre la app con internet al menos una vez.",
   "install_close": "Entendido",
   "download_apk": "Descargar APK · Android",
-  "bible_online": "Leer en la Biblioteca en Línea"
+  "bible_online": "Leer en la Biblioteca en Línea",
+  "access_remember": "Recordar este dispositivo y entrar directamente",
+  "access_require": "Pedir contraseña cada vez que abra la app",
+  "access_device_hint": "Cualquier persona que use este dispositivo podrá abrir la app. Puedes cambiar esta opción en Perfil → Privacidad. La contraseña seguirá siendo necesaria en otro dispositivo o para recuperar una copia.",
+  "access_locked_hint": "Se pedirá contraseña al abrir y tras cinco minutos sin interacción. El cronómetro conserva el tiempo."
 }

@@ -12,3 +12,42 @@ export async function readCache():Promise<Cache|null>{const d=await db();return 
 export async function writeCache(value:Cache|null){const d=await db();return new Promise<void>((resolve,reject)=>{const t=d.transaction('vault','readwrite');value?t.objectStore('vault').put(value,'current'):t.objectStore('vault').delete('current');t.oncomplete=()=>{d.close();resolve();};t.onerror=()=>reject(t.error);});}
 export async function remote():Promise<{owner:string;revision:number;payload:Envelope|null}>{const r=await fetch('/api/vault',{cache:'no-store'});if(!r.ok)throw Error(r.status===401?'Inicia sesión para conectar tu copia.':'No se pudo conectar.');return r.json() as Promise<{owner:string;revision:number;payload:Envelope|null}>;}
 export async function push(cache:Cache){const r=await fetch('/api/vault',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({revision:cache.revision,payload:cache.payload})});if(r.status===409)throw Error('CONFLICT');if(!r.ok)throw Error('OFFLINE');return (await r.json() as {revision:number}).revision;}
+
+// This device-only record is never included in backups or sent to the server.
+// IndexedDB can structured-clone a non-extractable CryptoKey without saving the password.
+export type DeviceAccess = {
+  owner: string;
+  requirePassword: boolean;
+  salt?: string;
+  key?: CryptoKey;
+};
+export function matchesDeviceAccess(access: DeviceAccess | null, cache: Cache) {
+  return !!access && !access.requirePassword && access.owner === cache.owner
+    && access.salt === cache.payload.salt && !!access.key
+    && access.key.type === 'secret' && access.key.extractable === false
+    && access.key.algorithm.name === 'AES-GCM';
+}
+export async function readDeviceAccess(): Promise<DeviceAccess | null> {
+  const d = await db();
+  return new Promise((resolve, reject) => {
+    const tx = d.transaction('vault');
+    const request = tx.objectStore('vault').get('device-access');
+    tx.oncomplete = () => { d.close(); resolve(request.result || null); };
+    tx.onabort = tx.onerror = () => { d.close(); reject(tx.error); };
+  });
+}
+export async function writeDeviceAccess(value: DeviceAccess | null) {
+  const d = await db();
+  return new Promise<void>((resolve, reject) => {
+    const tx = d.transaction('vault', 'readwrite');
+    const store = tx.objectStore('vault');
+    if (value) {
+      // Password-required mode must remove the persisted decryption key entirely.
+      const record = value.requirePassword
+        ? { owner: value.owner, requirePassword: true } : value;
+      store.put(record, 'device-access');
+    } else store.delete('device-access');
+    tx.oncomplete = () => { d.close(); resolve(); };
+    tx.onabort = tx.onerror = () => { d.close(); reject(tx.error); };
+  });
+}

@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node tests/core.mjs"
+    "test": "node tests/core.mjs && node tests/device-access.mjs"
   },
   "dependencies": {
     "react": "19.2.6",
@@ -31,6 +31,7 @@
     "tailwindcss": "4.2.1",
     "@tailwindcss/postcss": "4.2.1",
     "@cloudflare/workers-types": "4.20260515.1",
-    "drizzle-kit": "0.31.10"
+    "drizzle-kit": "0.31.10",
+    "fake-indexeddb": "6.2.5"
   }
 }
